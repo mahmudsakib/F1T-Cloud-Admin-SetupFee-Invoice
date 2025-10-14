@@ -341,37 +341,51 @@
         </table>
 
         <!-- Information Section -->
-        <table class="info-table" cellpadding="0" cellspacing="0">
-              
-        <tr>
-        <td class="info-label">Gym Name</td>
-        <td class="info-value">: {{ tenant_name }}</td>
-        <td class="info-arabic">اسم النادي</td>
+<table class="info-table" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="info-label">Gym Name</td>
+    <td class="info-value">: {{ tenant_name }}</td>
+    <td class="info-arabic">اسم النادي</td>
 
-        <td class="info-label">Invoice No</td>
-        <td class="info-value">: INV-{{ invoice_id }}</td>
-        <td class="info-arabic">رقم الفاتورة</td>
-        </tr>
+    <td class="info-label">Invoice No</td>
+    <td class="info-value">: INV-{{ invoice_id }}</td>
+    <td class="info-arabic">رقم الفاتورة</td>
+  </tr>
 
-        <tr>
-        <td class="info-label">Prepared By</td>
-        <td class="info-value">: {{ staff.name }}</td>
-        <td class="info-arabic">أُعدت بواسطة</td>
+  <tr>
+    <td class="info-label">From Date</td>
+    <td class="info-value">: {{ start.date }}</td>
+    <td class="info-arabic">من تاريخ</td>
 
-        <td class="info-label">Invoice Date</td>
-        <td class="info-value">: {{ created_at }}</td>
-        <td class="info-arabic">تاريخ الفاتورة</td>
-        </tr>
+    <td class="info-label">Invoice Date</td>
+    <td class="info-value">: {{ created_at }}</td>
+    <td class="info-arabic">تاريخ الفاتورة</td>
+  </tr>
 
-        </table>
+  <tr>
+    <td class="info-label">To Date</td>
+    <td class="info-value">: {{ due.date }}</td>
+    <td class="info-arabic">إلى تاريخ</td>   
+
+    <td class="info-label">Prepared By</td>
+    <td class="info-value">: {{ staff.name }}</td>
+    <td class="info-arabic">أُعدت بواسطة</td>
+  </tr>
+</table>
+
 
 
         <!-- Items Table -->
 <table class="item-table" cellpadding="0" cellspacing="0">
   <tr>
+
     <th>
-      Setup Fee<br>
-      <span style="font-family: 'Plus Jakarta Sans', Arial;">رسوم الإعداد</span>
+  Subscription Plan<br>
+  <span style="font-family: 'Plus Jakarta Sans', Arial;">خطة الاشتراك</span>
+</th>
+    <th>
+  Subscription Fee<br>
+  <span style="font-family: 'Plus Jakarta Sans', Arial;">رسوم الاشتراك</span>
     </th>
     <th>
       Discount<br>
@@ -392,6 +406,7 @@
   </tr>
 
   <tr>
+    <td>{{ plan_name }}</td>
     <td>{{ amount }}</td>
     <td>{{ discount_amount }}</td>
     <td>{{ tax_amount }}</td>
@@ -404,12 +419,12 @@
         <!-- Summary Section -->
 <table class="summary-table" cellpadding="0" cellspacing="0">
   <tr>
-    <td class="summary-label">
-      <span class="label-text">Setup Fee</span>:
-    </td>
-    <td class="summary-value">{{ amount }}</td>
-    <td class="summary-arabic">رسوم الإعداد</td>
-  </tr>
+  <td class="summary-label">
+    <span class="label-text">Subscription Fee</span>:
+  </td>
+  <td class="summary-value">{{ amount }}</td>
+  <td class="summary-arabic">رسوم الاشتراك</td>
+</tr>
 
   <tr>
     <td class="summary-label">
