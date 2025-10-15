@@ -334,7 +334,7 @@
                 </td>
                 <td class="company-cell">
 
-                    <div>{{ f1t.address_line_1 }}</div>
+                    <div>Address: Kuwait, Kuwait City <br>Email:info@f1tcloud.com <br>Tel: +965 9956 8816 / +965 9879 8669 </div>
                 
                 </td>
             </tr>
@@ -355,7 +355,7 @@
 
         <tr>
         <td class="info-label">Prepared By</td>
-        <td class="info-value">: {{ staff.name }}</td>
+        <td class="info-value">: {{ staff_name }}</td>
         <td class="info-arabic">أُعدت بواسطة</td>
 
         <td class="info-label">Invoice Date</td>
@@ -370,7 +370,11 @@
 <table class="item-table" cellpadding="0" cellspacing="0">
   <tr>
     <th>
-      Setup Fee<br>
+      Item(s)<br>
+      <span style="font-family: 'Plus Jakarta Sans', Arial;">رسوم الإعداد</span>
+    </th>
+    <th> Amount
+      <br>
       <span style="font-family: 'Plus Jakarta Sans', Arial;">رسوم الإعداد</span>
     </th>
     <th>
@@ -392,6 +396,7 @@
   </tr>
 
   <tr>
+    <td>{{ setup_fee }}</td>
     <td>{{ amount }}</td>
     <td>{{ discount_amount }}</td>
     <td>{{ tax_amount }}</td>
@@ -405,33 +410,33 @@
 <table class="summary-table" cellpadding="0" cellspacing="0">
   <tr>
     <td class="summary-label">
-      <span class="label-text">Setup Fee</span>:
+      <span class="label-text">Total Amount</span>:
     </td>
-    <td class="summary-value">{{ amount }}</td>
+    <td class="summary-value">{{ total_amount }}</td>
     <td class="summary-arabic">رسوم الإعداد</td>
   </tr>
 
   <tr>
     <td class="summary-label">
-      <span class="label-text">Discount</span>:
+      <span class="label-text">Total Discount</span>:
     </td>
-    <td class="summary-value">{{ discount_amount }}</td>
+    <td class="summary-value">{{ total_discount }}</td>
     <td class="summary-arabic">الخصم</td>
   </tr>
 
   <tr>
     <td class="summary-label">
-      <span class="label-text">Tax</span>:
+      <span class="label-text">Total Tax</span>:
     </td>
-    <td class="summary-value">{{ tax_amount }}</td>
+    <td class="summary-value">{{ total_tax}}</td>
     <td class="summary-arabic">الضريبة</td>
   </tr>
 
   <tr>
     <td class="summary-label">
-      <span class="label-text">Fees</span>:
+      <span class="label-text">Total Fees</span>:
     </td>
-    <td class="summary-value">{{ fees_amount }}</td>
+    <td class="summary-value">{{ total_fees }}</td>
     <td class="summary-arabic">الرسوم</td>
   </tr>
 
@@ -439,7 +444,7 @@
     <td class="summary-label">
       <span class="label-text">Total Payable</span>:
     </td>
-    <td class="summary-value">{{ payable_amount }}</td>
+    <td class="summary-value">{{ total_payable }}</td>
     <td class="summary-arabic">المبلغ الإجمالي المستحق</td>
   </tr>
 </table>
@@ -470,7 +475,7 @@
   <tr>
     <td>{{ transaction.created_at }}</td>
     <td>{{ transaction.medium }}</td>
-    <td>{{ transaction.payable_amount }}</td>
+    <td>{{ transaction.total_payable }}</td>
     <td>{{ transaction.transaction_id }}</td>
   </tr>
 </table>
@@ -500,7 +505,7 @@
             </tr>
             <tr>
                 <td colspan="2" style="padding-top: 15px;">
-                    {{ f1t.terms_and_conditions }}
+                    {{ f1tadmin_terms_and_conditions }}
                 </td>
             </tr>
         </table>
